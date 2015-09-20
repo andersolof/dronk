@@ -32,7 +32,7 @@ function lineHandler(line) {
     handler(cmd[2]);
   }
   catch(e) {
-    console.err(e);
+    console.log('Error:',e);
   }
 
 }
@@ -51,6 +51,9 @@ var handlers = {
   },
   'light': function(opt) {
     require('./lib/light').apply(null, hexRgb(opt).map(function(b) { return b/255 }));
+  },
+  'sound': function(opt) {
+    require('./lib/sound')(opt);
   },
   'QR-Code': function(code) {
     lineHandler(code);

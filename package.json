@@ -7,7 +7,9 @@
     "exit-hook": "~1.1.1",
     "lodash":"~3.10.1",
     "byline":"~4.2.1",
-    "hex-rgb":"~1.0.0"
+    "hex-rgb":"~1.0.0",
+    "lame":"~1.2.3",
+    "speaker":"~0.2.5"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
