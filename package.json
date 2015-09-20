@@ -6,7 +6,8 @@
   "dependencies": {
     "exit-hook": "~1.1.1",
     "lodash":"~3.10.1",
-    "byline":"~4.2.1"
+    "byline":"~4.2.1",
+    "hex-rgb":"~1.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

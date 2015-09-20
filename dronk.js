@@ -1,5 +1,6 @@
 
 var byline = require('byline');
+var hexRgb = require('hex-rgb');
 
 var rl = require('readline').createInterface({
     input: process.stdin,
@@ -27,8 +28,12 @@ function lineHandler(line) {
     console.log('Unknown instruction', cmd[1], cmd[2]);
     return;
   }
-
-  handler(cmd[2]);
+  try {
+    handler(cmd[2]);
+  }
+  catch(e) {
+    console.err(e);
+  }
 
 }
 
@@ -43,6 +48,9 @@ var handlers = {
       ob[parts[0]] = parts[1];
     })
     require('./lib/pump')(ob);
+  },
+  'light': function(opt) {
+    require('./lib/light').apply(null, hexRgb(opt).map(function(b) { return b/255 }));
   },
   'QR-Code': function(code) {
     lineHandler(code);
