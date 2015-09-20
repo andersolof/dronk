@@ -1,0 +1,24 @@
+{
+  "name": "dronk",
+  "version": "1.0.0",
+  "description": "Heavy machinery for mixing drinks",
+  "main": "dronk.js",
+  "dependencies": {
+    "exit-hook": "~1.1.1",
+    "lodash":"~3.10.1",
+    "byline":"~4.2.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andersolof/dronk.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andersolof/dronk/issues"
+  },
+  "homepage": "https://github.com/andersolof/dronk#readme"
+}
