@@ -2,20 +2,17 @@
 var byline = require('byline');
 var hexRgb = require('hex-rgb');
 
-var rl = require('readline').createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
+// var rl = require('readline').createInterface({
+//     input: process.stdin,
+//     output: process.stdout
+// });
+// rl.on('line', lineHandler);
 
-// var stream = byline.createStream(process.stdin);
-//
-// stream.on('data', function(buf) {
-//   var line = buf.toString();
-//   lineHandler(line);
-// })
-
-rl.on('line', lineHandler);
-//rl.prompt();
+byline.createStream(process.stdin)
+  .on('data', function(buf) {
+    var line = buf.toString();
+    lineHandler(line);
+  })
 
 function lineHandler(line) {
   var cmd = /([^:]*)(?::(.*))?/.exec(line);
