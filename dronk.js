@@ -1,39 +1,12 @@
 
-var byline = require('byline');
-var hexRgb = require('hex-rgb');
+require('babel/register');
 
-// var rl = require('readline').createInterface({
-//     input: process.stdin,
-//     output: process.stdout
-// });
-// rl.on('line', lineHandler);
+var interpret = require('./interpret.js')
 
-byline.createStream(process.stdin)
-  .on('data', function(buf) {
-    var line = buf.toString();
-    lineHandler(line);
-  })
-
-function lineHandler(line) {
-  var cmd = /([^:]*)(?::(.*))?/.exec(line);
-  if(!cmd) {
-    console.log('Unknown command', line);
-    return;
-  }
-  var handler = handlers[cmd[1]];
-  if(!handler) {
-    console.log('Unknown instruction', cmd[1], cmd[2]);
-    return;
-  }
-  try {
-    handler(cmd[2]);
-  }
-  catch(e) {
-    console.log('Error:',e);
-  }
-
-}
-
+process.stdin
+.pipe(interpret(require('./program.js')))
+.pipe(process.stdout);
+/*
 var handlers = {
   'exit': function() {
     process.exit(0);
@@ -56,3 +29,4 @@ var handlers = {
     lineHandler(code);
   }
 }
+*/
