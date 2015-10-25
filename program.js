@@ -3,7 +3,7 @@ const PUMP_CL_PER_MIN = [6,7,8,7.5,7,7,7];
 
 module.exports = {
   // qr-code:[1,1,1,1,1,1,1],10
-  'qr-code': function(recepie,size) {
+  'qr-code': function(recepie,size = 12) {
     return {
       'mix-drink': [recepie, size],
       'sound': ['test.mp3']
@@ -21,6 +21,10 @@ module.exports = {
       {pump:[pump, true]},
       {queue:[t, {pump:[pump, false]}]},
     ];
+  },
+
+  exit() {
+    process.exit(0);
   },
 
   queue(t, cmd) {

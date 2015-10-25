@@ -4,7 +4,7 @@ require('babel/register');
 var interpret = require('./interpret.js')
 
 process.stdin
-.pipe(interpret(require('./program.js')))
+.pipe(interpret(require('./program.js'), require('./lib/sound.js'), require('./lib/gpio.js')))
 .pipe(process.stdout);
 /*
 var handlers = {

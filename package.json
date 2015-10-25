@@ -4,13 +4,15 @@
   "description": "Heavy machinery for mixing drinks",
   "main": "dronk.js",
   "dependencies": {
+    "babel": "^5.8.29",
     "byline": "~4.2.1",
     "exit-hook": "~1.1.1",
     "hex-rgb": "~1.0.0",
     "lame": "~1.2.3",
     "lodash": "~3.10.1",
-    "speaker": "~0.2.5",
-    "stream-combiner2": "^1.1.1"
+    "speaker": "^0.2.6",
+    "stream-combiner2": "^1.1.1",
+    "through2": "^2.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
