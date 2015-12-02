@@ -1,0 +1,15 @@
+<head>
+  <title>webapp</title>
+</head>
+
+<body>
+  <h1>Dronk</h1>
+
+  {{>slider ingredient="vodka" value=0.6 }}
+  {{>slider ingredient="juice" value=0.6 }}
+</body>
+
+
+<template name="slider">
+  <slider {{this}}><div class="handle" style="left:{{leftValue}}%"></div></slider>
+</template>
